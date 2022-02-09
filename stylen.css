@@ -1,0 +1,250 @@
+/* カルーセル全体の設定 */
+.carousel{
+  width: 602px;
+  margin: 16px auto;
+}
+/* スライドの設定 */
+.slide{
+  width: 100%;
+  height: 406px;
+  /* オーバーしてる物を消す */
+  overflow: hidden;
+  border-radius: 2%;
+  /* ポジションabsoluteで親要素から配置指定するために記述 */
+  position: relative;
+}
+.slide ul{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  /* スライドの横並び */
+  display: flex;
+  /* スライド移動の移動速度 */
+  transition: 0.3s;
+}
+.slide ul li{
+  width: 100%;
+  height: 100%;
+  /* 要素の最小幅 */
+  min-width: 100%;
+}
+.slide ul li img{
+  width: 100%;
+  height: 100%;
+  /* 写真を幅に無理に合わせず元の縦横比率 */
+  object-fit: cover;
+}
+#prev{
+  /* 親要素がstatic（移動なしだと）左上からの指定、親要素がstatic以外だと移動してなくても親要素の左上からの指定 */
+  position: absolute;
+  /* topから半分下げるだけだから横ボタンの上が全体の半分の位置に来てしまう */
+  top: 50%;
+  /* 上の問題を解決するため横ボタンの半分の高さをY軸方向に移動させる */
+  transform: translateY(-50%);
+  left: 0px;
+  border: none;
+  font-size: 20px;
+  /* カーソルの形状変え */
+  cursor: pointer;
+}
+#next{
+  position: absolute;
+  /* topから半分下げるだけだから横ボタンの上が全体の半分の位置に来てしまう */
+  top: 50%;
+  /* 上の問題を解決するため横ボタンの50%の高さをY軸方向に移動させる */
+  transform: translateY(-50%);
+  right: 0px;
+  border: none;
+  font-size: 20px;
+  /* カーソルの形状変え */
+  cursor: pointer;
+}
+/* 横ボタンの上をカーソルが通ったら */
+#prev:hover,#next:hover{
+  /* ボタンを薄く */
+  opacity: 0.5;
+}
+/* jsでページの１番前か後ろに行ったら横ボタンを消す */
+.off{
+  display: none;
+}
+/* 円ボタンの位置を設定 */
+.sirclebutton{
+  margin-top: 16px;
+  text-align: center;
+}
+/* 円ボタンの設定 */
+.sirclebutton button{
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+}
+/* buttonの直後にあるbutton */
+.sirclebutton button + button{
+  margin-left:8px ;
+}
+/* 円ボタンが押されたら黒く */
+.sirclebutton .current{
+  background-color: #999;
+}
+
+
+
+main{
+  /* 背景色 (赤,緑,青,透明度)色は255まで透明度は最大値１*/
+  background-color: rgba(255, 0, 0,0.3);
+  /* 枠線の太さ、スタイル、色 */
+  border: 4px solid gray;
+  /* 枠線の角に丸みをつかせる */
+  border-radius: 8px;
+  text-align: center;
+  /*枠の外の余白 */
+  margin: 16px auto 0px; 
+  /* 枠の中の余白 */
+  padding: 8px;
+}
+.otherpagecontainerall{
+  display: inline-block;
+  position: relative;
+  width: 600px;
+  margin: auto;
+  }
+  .otherpagecontainer2{
+    display: inline-block;
+    position: absolute;
+    left: 320px;
+    bottom: 0px;
+    width: 600px;
+    }
+.otherpage{
+  /* 行間に余裕 */
+  line-height: 1.8;
+  text-align: left;
+}
+/* タブ以下全て */
+.tab{
+  /* センター配置 */
+  text-align: center;
+  /* 枠外 */
+  margin: 30px auto; 
+}
+/* タブ部分 */
+.innav{
+  /* ・消し */
+  list-style: none;
+  /* フォントサイズ */
+  font-size: 17px;
+  /* 横並び */
+  display: flex;
+  /* 横並び(flex)の配置 */
+  justify-content: center;
+}
+/* タブ1つのセル */
+.innav li a{
+  /* block要素をinline-block要素に変換しサイズ設定が可能に。また元の横並びも継続。 */
+  display: inline-block;
+  /* １セル幅 */
+  width: 100px;
+  /* セルの中央に記述 */
+  text-align: center;
+  /* 枠内 */
+  padding: 8px;
+  /* 枠外 */
+  margin: 2px;
+  /* 背景色 */
+  background-color: #fff;
+  /* 文字の色 */
+  color:#333;
+  /* 枠線の太さ、スタイル、色 */
+  border: 4px solid blue;
+  /* 枠線の角に丸みをつかせる */
+  border-radius: 10px;
+  /* アンダーライン消去 */
+  text-decoration: none;
+  /* 文字サイズ */
+  font-size: auto;
+}
+/* アクティブタブ */
+.innav li .active{
+  border-color:red ;
+  color: #fff;
+  background-color:#333;
+}
+/* アクティブ以外に触れたら */
+.innav li a:not(.active):hover{
+  /* 透明度 */
+  opacity: 0.5;
+}
+/* コンテンツ全て */
+.content{
+  /* コンテンツ隠し */
+  display: none;
+}
+/* アクティブコンテンツ */
+.content.active{
+  /* コンテンツ隠しブロック */
+  display: block;
+}
+
+/* 全ての表 */
+.content table{
+  /* センター配置 */
+  margin: auto;
+  width: 70%;
+  /* height: 70%; */
+  font-size: 20px;
+  
+}
+/* 表の１列 */
+tr{
+  height: 70px;
+}
+/* 表リンク */
+table a{
+  /* アンダーライン消去 */
+  text-decoration: none;
+}
+/* 囲みライン */
+fieldset{
+  /* 中央配置 */
+  margin: auto;
+  /* 枠線の幅 */
+  width: 700px;
+}
+/* 成績タイトル */
+.content legend{
+  font-size: 30px;
+}
+/* 成績タイトル写真 */
+#resultpicture{
+  /* 幅 */
+  width: 50px;
+  /* 高さ */
+  height: 50px;
+  /* 画像の角に丸みつかせる*/
+  border-radius: 2%;
+  /* 行ボックスのどこの高さに置くか */
+  vertical-align: middle;
+}
+/* 成績答え */
+.content h5{
+  color: rgb(0, 0, 255);;
+  font-size: 25px;
+  /* 太字 */
+  font-weight: bold;
+  /* 枠外 */
+  margin: 10px;
+}
+#licence p{
+  font-size: 18px;
+}
+footer{
+  /* 文字置く左右 */
+  text-align: right;
+  font-size: 15px;
+}

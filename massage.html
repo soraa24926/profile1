@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>履歴書メッセージ </title>
+    <!-- 表示領域　デバイスの幅の１倍で表示 -->
+    <meta name="vieport" content="width=device-width,initial-scale=1">
+    <!-- ネットページタブのアイコン -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="stylem.css">
+  </head>
+  <body>
+    <main>
+      <section class="carousel">
+        <div class="slide">
+          <ul>
+            <li><img src="daidoucoach.jpeg" alt="大同コーチの写真" id="titlepicture"></li>
+            <li><img src="daidou.jpeg" alt="大同のロッカールーム" id="titlepicture"></li>
+            <li><img src="bobitocoach.jpg" alt="ボビットコーチの写真" id="titlepicture"></li>
+            <li><img src="ospcoach.jpeg" alt="オスピコーチの写真" id="titlepicture"></li>
+            <li><img src="marinos.jpeg" alt="マリノスタウン" id="titlepicture"></li>
+            <li><img src="campnou.jpeg" alt="国立競技場" id="titlepicture"></li>
+          </ul>
+          <button id="prev">&lsaquo;</button>
+          <button id="next">&rsaquo;</button>
+        </div>
+        <div class="sirclebutton">      
+          <!-- jsから円ボタン配置 -->
+        </div>
+      </section>
+      <h1>浅賀 宇宙</h1>
+      <!-- 強調タグstrong 改行タグbr-->
+      <p id="introduction"><strong>浅賀宇宙</strong>(2001年9月26日)は東京都江東区出身、プログラミング学習中<br>
+      メッセージお待ちしてます！</p>
+      <ul class="otherpage">
+        <li><a href="newstyle.html">自己紹介はこちら</a></li>
+      </ul>
+      <hr>
+      
+      <h2>メッセージ</h2>
+      <fieldset>
+        <!-- 全体を囲ってタイトルを表示 -->
+        <legend>入力欄</legend>
+        <h3>名前</h3>
+        <!-- <label for="name">名前</label> -->
+        <input type="text" placeholder="名無し太郎" id="name">
+        <h3>生年月日</h3>
+        <input type="date">
+        <h3>性別</h3>
+        <!-- 横並びにするためにグループ化 -->
+        <div id="genderall">
+          <!-- labelで囲むと男性や女性等の部分のクリックでもチェック可能に -->
+          <label><input type="radio" name="gender">男性</label>
+          <label><input type="radio" name="gender">女性</label>
+          <label><input type="radio" name="gender">回答しない</label>
+        </div>
+        <h3>住所</h3>
+        <select id="todouhukenn" >
+          <option>都道府県</option>
+          <option>茨城県</option>
+          <option>栃木県</option>
+          <option>群馬県</option>
+          <option>埼玉県</option>
+          <option>東京都</option>
+          <option>千葉県</option>
+          <option>神奈川県</option>
+        </select>
+        <input type="text" placeholder="○○区 △△ １−２−３" id="sikutyousonn">
+        <h3>連絡先</h3>
+        <!-- labelのforとidを結ぶと横に説明書きがされる -->
+        <label for="number">電話番号</label>
+        <input type="number" placeholder="080-1234-5678" id="number">
+        <br><br>
+        <!-- labelのforとidを結ぶと横に説明書きがされる -->
+        <label for="address" >メールアドレス</label>
+        <input type="text" placeholder="noname11234@gogle.com" id="address">
+        <h3>連絡方法（複数選択可）</h3>
+        <div id="contact">
+        <!-- labelで囲むとお電話やメールの部分のクリックでもチェック可能に -->
+        <label><input type="checkbox">お電話</label>
+        <label><input type="checkbox">メール</label>
+        <label><input type="checkbox">お手紙</label>
+      </div>
+        <h3>メッセージ</h3>
+        <textarea id="massage"></textarea>
+        <br>
+        <br>
+        <button>送信</button>
+      </fieldset>
+      
+      
+    </main>
+    <footer>©︎ asakasora 2021</footer>
+    <script src="mainm.js"></script>
+  </body>   
+</html>
